@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>稿件室｜投稿審查</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap bar">
+      <span class="brand">稿件室</span>
+      <nav aria-label="選擇角色">
+        <button type="button" id="author" aria-pressed="true">作者</button>
+        <button type="button" id="editor" aria-pressed="false">編輯</button>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="heading">
+      <div><h1 id="page-title">我的投稿</h1><p id="page-description">建立草稿、送出投稿並查看審查結果。</p></div>
+      <button type="button" id="new-paper" class="primary">新增投稿</button>
+    </section>
+    <p id="feedback" role="status" hidden></p>
+    <section class="panel" aria-labelledby="page-title">
+      <table>
+        <thead><tr id="columns"></tr></thead>
+        <tbody id="papers"></tbody>
+      </table>
+      <p id="empty" class="empty"></p>
+    </section>
+    <section id="approved-section" aria-labelledby="approved-title">
+      <h2 id="approved-title">已通過稿件</h2>
+      <div class="panel">
+        <table>
+          <thead><tr><th id="approved-author-column" scope="col" hidden>作者</th><th scope="col">類別</th><th scope="col">標題</th><th scope="col">操作</th></tr></thead>
+          <tbody id="approved-papers"></tbody>
+        </table>
+        <p id="approved-empty" class="empty"></p>
+      </div>
+    </section>
+  </main>
+  <dialog id="dialog" aria-labelledby="dialog-title">
+    <div class="dialog-top">
+      <h2 id="dialog-title"></h2>
+      <form method="dialog"><button aria-label="關閉視窗">關閉</button></form>
+    </div>
+    <div id="dialog-content"></div>
+    <p id="dialog-feedback" role="alert" hidden></p>
+  </dialog>
+</body>
+</html>
